@@ -5,7 +5,7 @@ int main(int argc, char *argv[]) {
     // 获取并打印命令行参数
     std::cout << "argc: " << argc << '\n';
     for (int i = 0; i < argc; ++i) {
-        std::cout << "Argument " << i << ": " << argv[i] << "\n";
+        std::cout << "argument " << i << ": " << argv[i] << "\n";
     }
 
     // Eigen 基本类型
