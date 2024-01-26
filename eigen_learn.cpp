@@ -9,7 +9,12 @@ int main(int argc, char *argv[]) {
     }
 
     // Eigen 基本类型
-    Eigen::Vector3d vec; // 3维向量
+    Eigen::Vector3d vec; // 3维double向量, 末尾的d代表double
+    Eigen::Vector3f vec; // 3维double向量, 末尾的f代表float
+    Eigen::Vector3i vec; // 3维double向量, 末尾的i代表int
+    Eigen::Matrix3d mat; // 3x3的double矩阵, 末尾的d代表double
+    Eigen::Matrix4f mat; // 4x4的float的矩阵, 末尾的f代表float
+    Eigen::Matrix4i mat; // 4x4的int矩阵, 末尾的i代表int
     Eigen::MatrixXd mat; // 动态大小的矩阵
 
     // 初始化向量
@@ -55,6 +60,15 @@ int main(int argc, char *argv[]) {
     dynamicMatrix.block(1, 1, 2, 2) << 100, 200,
                                         300, 400; // 修改一个 2x2 的子矩阵
     std::cout << "Modified Matrix:\n" << dynamicMatrix << "\n";
+
+    // 创建一个 4x5 的 float 类型矩阵
+    Eigen::Matrix<float, 4, 5> mat;
+
+    // 初始化矩阵（这里用随机值填充）
+    mat = Eigen::Matrix<float, 4, 5>::Random();
+
+    // 打印矩阵
+    std::cout << "Matrix:\n" << mat << std::endl;
 
     // 矩阵转置和求逆
     Eigen::MatrixXd mat_transposed = mat.transpose();
